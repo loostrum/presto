@@ -6,10 +6,6 @@ def gen_processing_commands(filename, outputname):
     '''
     Create process_pre.sh file with processing commands for given file.
     '''
-    if not os.path.isfile(filename):
-        print 'File {0} does not exist. Exiting.'.format(filename)
-        exit()
-
     print 'Generating processing file for {0} and data file {1}'.format(outputname, filename)
     opts = {'fil':filename, 'out':outputname, 'numharm':8}
     template = '''# Processing commands for {out}
@@ -31,8 +27,8 @@ cat ddplan.txt
 
 
 def main():
-    defaultdir = '/projects/0/lotaas/data/loostrum/sdb/'
-    defaultfile = '11100335.320.all.fil'
+    defaultdir = '/projects/0/lotaas/data/loostrum/sdb/gbt/HE0532'
+    defaultfile = '*.fits'
     datadir = raw_input('Datadir? {0}\n'.format(defaultdir))
     if datadir == '':
         datadir = defaultdir[:]

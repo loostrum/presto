@@ -1,0 +1,1 @@
+grep ACCEL cands.txt | sort -nr -k 3 | awk '{print "mkdir DM"$2"_P"$8"; cd DM"$2"_P"$8"; prepfold -n 128 -nsub 128 -p "$8/1000" -dm "$2" -noxwin -o PG1101_DM"$2" /projects/0/lotaas/data/loostrum/sdb/gbt/HE0532/*.fits"}' > prepf_commands

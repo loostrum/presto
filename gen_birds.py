@@ -28,6 +28,11 @@ def main():
         i += 1
         line = data[i].strip().split()
 
+    # Only first nmax birds
+    nmax = 100
+    if len(birdsdata) > nmax:
+        birdsdata = birdsdata[:nmax]
+
     print 'Generating birds file {0}'.format(birdsfile)
     # write to birds file
     with open(birdsfile, 'w') as outfile:
